@@ -1,0 +1,27 @@
+{
+  "name": "promise-fs",
+  "version": "0.1.0",
+  "description": "Implements module FS using native Promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "async",
+    "promises",
+    "js",
+    "javascript",
+    "coffee",
+    "cake",
+    "coffee-script"
+    "fs",
+    "node",
+    "nodejs",
+    "iojs"
+  ],
+  "author": "Nick K.",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.9.3"
+  }
+}

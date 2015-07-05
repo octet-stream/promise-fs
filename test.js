@@ -4,7 +4,7 @@ fs = require('./index');
 
 path = require('path');
 
-fs.readFilePromise(path.join(fs.realpathSync(__dirname), '../test/file.json')).then(function(data) {
+fs.readFilePromise('./test/file.json').then(function(data) {
   var i, len, results, v;
   data = (JSON.parse(data)).programmers;
   results = [];
@@ -19,7 +19,7 @@ fs.readFilePromise(path.join(fs.realpathSync(__dirname), '../test/file.json')).t
   return console.log(err);
 });
 
-fs.readFilePromise(path.join(fs.realpathSync(__dirname), '../test/test')).then(function(data) {
+fs.readFilePromise('./test/test').then(function(data) {
   return console.log("Second file contents:\n" + data);
 })["catch"](function(err) {
   return console.log(err);

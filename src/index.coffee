@@ -91,23 +91,51 @@ openPromise = (path, flags, mode) ->
 # @return object Promise
 ###
 readFilePromise = (path) ->
+	# return new Promise (_resolve, _reject) ->
+	# 	existsPromise path
+	# 	.then ->
+	# 		statPromise path
+	# 		.then (stats) ->
+	# 			openPromise path, 'r', null
+	# 			.then (fd) ->
+	# 				buffer = new Buffer stats.size
+	# 				readPromise fd, buffer, 0, buffer.length, null
+	# 				.then (buffer) ->
+	# 					_resolve buffer
+	# 				.catch (err) ->
+	# 					_reject err
+	# 			.catch (err) ->
+	# 				_reject err
+	# 	.catch ->
+	# 		_reject "Unable to find #{path} file. Wrong path?"
 	return new Promise (_resolve, _reject) ->
-		existsPromise path
-		.then ->
-			statPromise path
-			.then (stats) ->
-				openPromise path, 'r', null
-				.then (fd) ->
-					buffer = new Buffer stats.size
-					readPromise fd, buffer, 0, buffer.length, null
-					.then (buffer) ->
-						_resolve buffer
-					.catch (err) ->
-						_reject err
-				.catch (err) ->
-					_reject err
-		.catch ->
-			_reject "Unable to find #{path} file. Wrong path?"
+		fs.readFile path, (err, data) ->
+			if err
+				_reject err
+			else
+				_resolve data
+
+###
+# Write file using native promises
+#
+# @param string filename
+# @param Buffer|string data
+# @param object|string
+# 			- string|null encoding
+#			- number mode
+# 			- string flag
+###
+writeFilePromise = (filename, data, options) ->
+	return new Promise (_resolve, _reject) ->
+		fs.writeFile filename, data, options, (err) ->
+			if err
+				_reject err
+
+appendFilePromise = (filename, data, options) ->
+	return new Promise (_resolve, _reject) ->
+		fs.appendFile filename, data, options, (err) ->
+			if err
+				_reject err
 
 module.exports = fs
 module.exports.existsPromise = existsPromise
@@ -115,3 +143,4 @@ module.exports.statPromise = statPromise
 module.exports.readPromise = readPromise
 module.exports.openPromise = openPromise
 module.exports.readFilePromise = readFilePromise
+module.exports.writeFilePromise = writeFilePromise

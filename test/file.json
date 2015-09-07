@@ -1,14 +1,13 @@
 {
 	"programmers": [
 		{
-			"name": "Nick K.",
+			"name": "John",
 			"sex": "male",
 			"dob": {
-				"day": "11",
-				"month": "Feb.",
-				"year": "1994"
+				"day": "21",
+				"month": "Apr.",
+				"year": "1988"
 				},
-			"age": "21",
 			"skills": ["html", "css", "less", "stylus", "javascript", "coffeescript", "php", "node.js"]
 		}
 	]

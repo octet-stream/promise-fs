@@ -5,8 +5,5 @@ Implements module FS using native Promises
 You can install this module using NPM:
 
 ```
-$ npm i promise-fs
+$ npm i --save promise-fs
 ```
-=======
-# promise-fs
-Implements module FS using native Promises

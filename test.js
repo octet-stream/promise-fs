@@ -4,7 +4,7 @@ fs = require('./index');
 
 path = require('path');
 
-fs.readFilePromise('./test/file.json').then(function(data) {
+fs.readFilePromise(__dirname + "/test/file.json").then(function(data) {
   var i, len, results, v;
   data = (JSON.parse(data)).programmers;
   results = [];
@@ -19,9 +19,13 @@ fs.readFilePromise('./test/file.json').then(function(data) {
   return console.log(err);
 });
 
-fs.readFilePromise('./test/test').then(function(data) {
+fs.readFilePromise(__dirname + "/test/test").then(function(data) {
   return console.log("Second file contents:\n" + data);
 })["catch"](function(err) {
+  return console.log(err);
+});
+
+fs.writeFilePromise(__dirname + "/test/writtenWithPromise", process.argv.slice(2).toString(), 'utf-8')["catch"](function(err) {
   return console.log(err);
 });
 

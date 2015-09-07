@@ -1,4 +1,4 @@
-var existsPromise, fs, openPromise, readFilePromise, readPromise, statPromise;
+var appendFilePromise, existsPromise, fs, openPromise, readFilePromise, readPromise, statPromise, writeFilePromise;
 
 fs = require('fs');
 
@@ -107,22 +107,44 @@ openPromise = function(path, flags, mode) {
 
 readFilePromise = function(path) {
   return new Promise(function(_resolve, _reject) {
-    return existsPromise(path).then(function() {
-      return statPromise(path).then(function(stats) {
-        return openPromise(path, 'r', null).then(function(fd) {
-          var buffer;
-          buffer = new Buffer(stats.size);
-          return readPromise(fd, buffer, 0, buffer.length, null).then(function(buffer) {
-            return _resolve(buffer);
-          })["catch"](function(err) {
-            return _reject(err);
-          });
-        })["catch"](function(err) {
-          return _reject(err);
-        });
-      });
-    })["catch"](function() {
-      return _reject("Unable to find " + path + " file. Wrong path?");
+    return fs.readFile(path, function(err, data) {
+      if (err) {
+        return _reject(err);
+      } else {
+        return _resolve(data);
+      }
+    });
+  });
+};
+
+
+/*
+ * Write file using native promises
+ *
+ * @param string filename
+ * @param Buffer|string data
+ * @param object|string
+ * 			- string|null encoding
+ *			- number mode
+ * 			- string flag
+ */
+
+writeFilePromise = function(filename, data, options) {
+  return new Promise(function(_resolve, _reject) {
+    return fs.writeFile(filename, data, options, function(err) {
+      if (err) {
+        return _reject(err);
+      }
+    });
+  });
+};
+
+appendFilePromise = function(filename, data, options) {
+  return new Promise(function(_resolve, _reject) {
+    return fs.appendFile(filename, data, options, function(err) {
+      if (err) {
+        return _reject(err);
+      }
     });
   });
 };
@@ -138,3 +160,5 @@ module.exports.readPromise = readPromise;
 module.exports.openPromise = openPromise;
 
 module.exports.readFilePromise = readFilePromise;
+
+module.exports.writeFilePromise = writeFilePromise;

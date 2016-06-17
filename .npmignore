@@ -1,4 +1,4 @@
 test
-src
 nodemon.json
-gulpfile.coffee
+index.coffee
+.git

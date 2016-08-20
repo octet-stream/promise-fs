@@ -1,4 +1,4 @@
-promisify = require 'es6-promisify'
+pify = require 'pify'
 fs = require 'fs'
 
 aMethods = [
@@ -14,12 +14,27 @@ aMethods = [
   'mkdir'
   'readdir'
   'stat'
+  'lstat'
+  'fstat'
   'appendFile'
   'realpath'
+  'link'
+  'unlink'
+  'readlink'
+  'chmod'
+  'fchmod'
+  'chown'
+  'fchown'
+  'lchown'
+  'fsync'
+  'utimes'
+  'futimes'
+  'ftruncate'
 ]
 
-# Wrap
+# Wrap fs methods
 aMethods.forEach (sMethod) ->
   unless fs[sMethod]
     return
-  exports[sMethod] = promisify fs[sMethod]
+
+  exports[sMethod] = pify fs[sMethod]

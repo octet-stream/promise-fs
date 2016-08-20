@@ -1,10 +1,11 @@
 {
   "name": "promise-fs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Implements module FS using Promises",
   "main": "index.js",
   "keywords": [
     "promises",
+    "promisify",
     "fs"
   ],
   "author": "Nick K.",
@@ -14,6 +15,6 @@
     "url": "https://github.com/octet-stream/promise-fs.git"
   },
   "dependencies": {
-    "es6-promisify": "^4.1.0"
+    "pify": "2.3.0"
   }
 }

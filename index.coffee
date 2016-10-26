@@ -38,4 +38,4 @@ aMethods.forEach (sMethod) ->
   unless fs[sMethod]
     return
 
-  exports[sMethod] = pify fs[sMethod], promiseModule: Promise
+  exports[sMethod] = pify fs[sMethod], Promise

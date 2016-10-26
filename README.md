@@ -15,5 +15,13 @@ $ npm i --save promise-fs
 
   fs.readFile 'path/to/file'
     .then (content) -> console.log content # Doing something with content
-    .catch (err) -> console.log err # Catching error
+    .catch (err) -> console.log err # Handle error
 ```
+
+# Wrapped methods:
+
+access, readFile, writeFile, close, open, read, write, rename, rmdir, mkdir, readdir, stat, lstat, fstat, appendFile, realpath, link, unlink, readlink, chmod, fchmod, chown, fchown, lchown, fsync, utimes, futimes, ftruncate
+
+# License
+
+MIT

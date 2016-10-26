@@ -1,6 +1,6 @@
 {
   "name": "promise-fs",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Implements module FS using Promises",
   "main": "index.js",
   "keywords": [
@@ -15,6 +15,7 @@
     "url": "https://github.com/octet-stream/promise-fs.git"
   },
   "dependencies": {
-    "pify": "2.3.0"
+    "pify": "2.3.0",
+    "pinkie-promise": "2.0.1"
   }
 }

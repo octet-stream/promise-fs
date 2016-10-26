@@ -1,5 +1,6 @@
+.DS_Store
 yarn.lock
-test
 nodemon.json
 index.coffee
+.gitignore
 .git

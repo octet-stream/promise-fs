@@ -1,8 +1,8 @@
-Promise = require "pinkie-promise"
-pify = require "pify"
 fs = require "fs"
 
-aMethods = [
+promisify = require "@octetstream/promisify"
+
+names = [
   "access"
   "readFile"
   "writeFile"
@@ -33,9 +33,4 @@ aMethods = [
   "ftruncate"
 ]
 
-# Wrap fs methods
-aMethods.forEach (sMethod) ->
-  unless fs[sMethod]
-    return
-
-  exports[sMethod] = pify fs[sMethod], Promise
+module.exports = promisify.some fs, names

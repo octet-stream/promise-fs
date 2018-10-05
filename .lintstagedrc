@@ -1,0 +1,4 @@
+{
+  "main.js": "node_modules/.bin/eslint --fix",
+  ".eslintrc.js": "node_modules/.bin/eslint --fix"
+}

@@ -1,6 +1,7 @@
 .DS_Store
 yarn.lock
-nodemon.json
-main.coffee
+.eslintrc.js
+.editorconfig
+.lintstagedrc
 .gitignore
 .git

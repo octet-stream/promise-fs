@@ -14,9 +14,6 @@
   "engines": {
     "node": ">=6"
   },
-  "scripts": {
-    "precommit": "node_modules/.bin/lint-staged"
-  },
   "dependencies": {
     "@octetstream/eslint-config": "3.0.0"
   },

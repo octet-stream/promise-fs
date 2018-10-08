@@ -15,10 +15,10 @@
     "node": ">=6"
   },
   "dependencies": {
-    "@octetstream/eslint-config": "3.0.0"
+    "@octetstream/eslint-config": "3.0.0",
+    "@octetstream/promisify": "2.0.1"
   },
   "devDependencies": {
-    "@octetstream/promisify": "2.0.1",
     "eslint": "5.6.1",
     "husky": "1.1.0",
     "lint-staged": "7.3.0"

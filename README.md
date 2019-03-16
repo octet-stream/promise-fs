@@ -20,7 +20,7 @@ npm install promise-fs
   import fs from "promise-fs"
 
   fs.readFile("path/to/file")
-    .then(content => console.log content) // Doing something with content
+    .then(content => console.log(String(content))) // Do something with the content
     .catch(err => console.log(err)) // Handle error
 ```
 

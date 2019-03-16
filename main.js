@@ -36,4 +36,7 @@ const names = [
   "ftruncate"
 ]
 
-module.exports = promisify.some(fs, names.filter(name => isFunction(fs[name])))
+const pfs = promisify.some(fs, names.filter(name => isFunction(fs[name])))
+
+module.exports = pfs
+module.exports.default = pfs

@@ -1,21 +1,27 @@
 # Promise FS
-Implements module FS using Promises
+
+Wraps FS methods using Promise
 
 ## Installation
-You can install this module using NPM:
+
+You can install this module using Yarn:
 
 ```
-$ npm i --save promise-fs
+yarn add promise-fs
+```
+
+```
+npm install promise-fs
 ```
 
 ## Usage
 
-```coffee
-  fs = require 'promise-fs'
+```js
+  import fs from "promise-fs"
 
-  fs.readFile 'path/to/file'
-    .then (content) -> console.log content # Doing something with content
-    .catch (err) -> console.log err # Handle error
+  fs.readFile("path/to/file")
+    .then(content => console.log content) // Doing something with content
+    .catch(err => console.log(err)) // Handle error
 ```
 
 # Wrapped methods:

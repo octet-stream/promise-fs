@@ -18,9 +18,9 @@
     "@octetstream/promisify": "2.0.2"
   },
   "devDependencies": {
-    "@octetstream/eslint-config": "3.1.0",
-    "eslint": "6.0.1",
-    "husky": "3.0.0",
-    "lint-staged": "9.0.0"
+    "@octetstream/eslint-config": "4.0.0",
+    "eslint": "6.6.0",
+    "husky": "3.0.9",
+    "lint-staged": "9.4.2"
   }
 }

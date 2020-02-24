@@ -33,7 +33,8 @@ const names = [
   "fsync",
   "utimes",
   "futimes",
-  "ftruncate"
+  "ftruncate",
+  "exists"
 ]
 
 const pfs = promisify.some(fs, names.filter(name => isFunction(fs[name])))

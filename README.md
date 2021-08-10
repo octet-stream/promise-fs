@@ -2,6 +2,10 @@
 
 Wraps FS methods using Promise
 
+## NOT MAINTAINED
+
+Use [`fs/prmise`](https://nodejs.org/dist/latest/docs/api/fs.html#fs_promises_api) instead.
+
 ## Installation
 
 You can install this module using Yarn:
